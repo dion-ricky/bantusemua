@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
     <Button
-        android:id="@+id/id_btDaftar"
+        android:id="@+id/btnGoToRegister"
         android:layout_width="78dp"
         android:layout_height="44dp"
         android:background="#05FFFFFF"
