@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/logo_horizontal_dark" />
 
     <EditText
-        android:id="@+id/idPw"
+        android:id="@+id/tvLoginPass"
         android:layout_width="360dp"
         android:layout_height="46dp"
         android:layout_marginTop="50dp"
@@ -28,10 +28,10 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail" />
 
     <EditText
-        android:id="@+id/idEmail"
+        android:id="@+id/tvLoginEmail"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
@@ -51,10 +51,10 @@
         app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3">
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginFacebook">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnMasuk"
             android:layout_width="237dp"
             android:layout_height="38dp"
             android:backgroundTint="@color/cardview_shadow_end_color"
@@ -64,7 +64,7 @@
     </androidx.cardview.widget.CardView>
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btnLoginFacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -72,11 +72,11 @@
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginGoogle"
         app:srcCompat="@drawable/facebook" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnLoginGoogle"
         android:layout_width="237dp"
         android:layout_height="38dp"
         android:layout_marginTop="32dp"
@@ -84,7 +84,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idPw"
+        app:layout_constraintTop_toBottomOf="@+id/tvLoginPass"
         app:srcCompat="@drawable/google" />
 
     <TextView
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGoToRegister"
         android:layout_width="78dp"
         android:layout_height="44dp"
         android:background="#05FFFFFF"
