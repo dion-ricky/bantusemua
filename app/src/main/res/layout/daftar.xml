@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/idEmail2"
+        android:id="@+id/id_txEmailReg"
         android:layout_width="360dp"
         android:layout_height="46dp"
         android:layout_marginTop="50dp"
@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/logo_horizontal_dark" />
 
     <EditText
-        android:id="@+id/idPw2"
+        android:id="@+id/id_txPassReg"
         android:layout_width="360dp"
         android:layout_height="46dp"
         android:layout_marginTop="20dp"
@@ -41,10 +41,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idEmail2" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txEmailReg" />
 
     <EditText
-        android:id="@+id/idPwVer"
+        android:id="@+id/id_txPassVerif"
         android:layout_width="360dp"
         android:layout_height="46dp"
         android:layout_marginTop="20dp"
@@ -53,16 +53,16 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idPw2" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txPassReg" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/id_imgDaftar"
         android:layout_width="251dp"
         android:layout_height="46dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idPwVer"
+        app:layout_constraintTop_toBottomOf="@+id/id_txPassVerif"
         app:srcCompat="@drawable/daftar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
