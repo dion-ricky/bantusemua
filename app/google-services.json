@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "274278595138-gpdl5v4bl8bctuq97o79e20rbl1priql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bantusemua",
+            "certificate_hash": "825b0ebba7731f88349bfbb3e7348c439ce1cca9"
+          }
+        },
+        {
           "client_id": "274278595138-l5o409irctkpjogiajhinublsm1qcd43.apps.googleusercontent.com",
           "client_type": 3
         }

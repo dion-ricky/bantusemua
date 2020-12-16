@@ -19,27 +19,30 @@
         app:srcCompat="@drawable/logo_horizontal_dark" />
 
     <EditText
-        android:id="@+id/tvLoginPass"
-        android:layout_width="360dp"
+        android:id="@+id/tfLoginPass"
+        android:layout_width="0dp"
         android:layout_height="46dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/tfLoginEmail" />
 
     <EditText
-        android:id="@+id/tvLoginEmail"
-        android:layout_width="360dp"
+        android:id="@+id/tfLoginEmail"
+        android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -84,7 +87,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLoginPass"
+        app:layout_constraintTop_toBottomOf="@+id/tfLoginPass"
         app:srcCompat="@drawable/google" />
 
     <TextView
