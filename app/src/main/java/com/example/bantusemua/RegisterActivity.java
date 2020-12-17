@@ -97,10 +97,14 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
 
                             } else {
-
+                                Log.d("REGISTER", "Gagal daftar");
                             }
                         }
                     });
+
+            setResult(RESULT_OK);
+            RegisterActivity.this.finish();
+
         }
     }
 }
