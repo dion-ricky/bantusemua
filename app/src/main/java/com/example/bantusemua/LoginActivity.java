@@ -32,11 +32,12 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     EditText tfEmail, tfPassword;
-    ImageButton btnLoginGoogle, btnLoginFacebook, btnMasuk;
+    ImageButton btnLoginGoogle, btnMasuk;
     Button btnGoToRegister;
     private GoogleSignInClient mGoogleSignInClient;
 
     private int RC_GOOGLE_SIGN_IN = 90;
+    private int RC_REGISTER = 91;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +49,6 @@ public class LoginActivity extends AppCompatActivity {
         tfEmail = findViewById(R.id.tfLoginEmail);
         tfPassword = findViewById(R.id.tfLoginPass);
         btnLoginGoogle = findViewById(R.id.btnLoginGoogle);
-        btnLoginFacebook = findViewById(R.id.btnLoginFacebook);
         btnGoToRegister = findViewById(R.id.btnGoToRegister);
         btnMasuk = findViewById(R.id.btnMasuk);
 
@@ -82,6 +82,8 @@ public class LoginActivity extends AppCompatActivity {
 
             email = tfEmail.getText().toString();
             pass = tfPassword.getText().toString();
+
+            if (email.isEmpty() || pass.isEmpty()) return;
 
             mAuth.signInWithEmailAndPassword(email, pass)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -143,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent openRegister = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(openRegister);
+            startActivityForResult(openRegister, RC_REGISTER);
         }
     }
 
