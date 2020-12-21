@@ -1,25 +1,25 @@
 package com.example.bantusemua;
 
-import android.widget.ImageView;
-
 public class model {
 
     String kategori;
     String judul;
     String lokasi;
-    String nominal;
-    String yayasan;
+    Long target;
+    Long terkumpul;
+    String pelaksana;
 //    int imgDonasi;
 
     public model() {
     }
 
-    public model(String kategori, String judul, String lokasi, String nominal, String yayasan) {
+    public model(String kategori, String judul, String lokasi, Long target, Long terkumpul, String pelaksana) {
         this.kategori = kategori;
         this.judul = judul;
         this.lokasi = lokasi;
-        this.nominal = nominal;
-        this.yayasan = yayasan;
+        this.target = target;
+        this.terkumpul = terkumpul;
+        this.pelaksana = pelaksana;
 //        this.imgDonasi = imgDonasi;
     }
 
@@ -35,12 +35,14 @@ public class model {
         return lokasi;
     }
 
-    public String getNominal() {
-        return nominal;
+    public Long getTarget() {
+        return target;
     }
 
-    public String getYayasan() {
-        return yayasan;
+    public Long getTerkumpul() { return terkumpul; }
+
+    public String getPelaksana() {
+        return pelaksana;
     }
 
 //    public int getImgDonasi() {

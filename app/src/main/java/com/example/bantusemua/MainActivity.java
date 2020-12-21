@@ -10,20 +10,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.bantusemua.DbRepo.Donasi;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,8 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 holder.get_txKategori().setText(""+model.getKategori());
                 holder.get_txJudul().setText(""+model.getJudul());
                 holder.get_txLokasi().setText(""+model.getLokasi());
-                holder.get_txNominal().setText(""+model.getNominal());
-                holder.get_txYayasan().setText(""+model.getYayasan());
+                holder.get_txNominal().setText("Rp " + NumberFormat.getNumberInstance(Locale.US).format(model.getTerkumpul())
+                        + " / " + NumberFormat.getNumberInstance(Locale.US).format(model.getTarget()));
+                holder.get_txYayasan().setText(""+model.getPelaksana());
 
             }
 

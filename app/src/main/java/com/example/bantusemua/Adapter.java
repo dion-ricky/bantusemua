@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Adapter extends RecyclerView.Adapter <ViewHolder> {
 
@@ -35,8 +35,9 @@ public class Adapter extends RecyclerView.Adapter <ViewHolder> {
         holder.get_txKategori().setText(modelList.get(position).getKategori());
         holder.get_txJudul().setText(modelList.get(position).getJudul());
         holder.get_txLokasi().setText(modelList.get(position).getLokasi());
-        holder.get_txNominal().setText(modelList.get(position).getNominal());
-        holder.get_txYayasan().setText(modelList.get(position).getYayasan());
+        holder.get_txNominal().setText(("Rp " + NumberFormat.getNumberInstance(Locale.US).format(modelList.get(position).getTerkumpul())
+                + " / " + NumberFormat.getNumberInstance(Locale.US).format(modelList.get(position).getTarget())));
+        holder.get_txYayasan().setText(modelList.get(position).getPelaksana());
 //        Glide.with(_context).load(modelList.get(position).getImgDonasi()).into(holder.get_imgDonasi());
     }
 
