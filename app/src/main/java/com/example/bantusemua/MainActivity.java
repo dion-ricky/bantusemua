@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
 //    ArrayList<model> modelList;
     RecyclerView recyclerView;
 
-    private FirebaseRecyclerOptions<model> options;
-    private FirebaseRecyclerAdapter<model,ViewHolder> adapter;
+    private FirebaseRecyclerOptions<Donasi> options;
+    private FirebaseRecyclerAdapter<Donasi,ViewHolder> adapter;
 
 
     @Override
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        ImageView ivAvatar = findViewById(R.id.imageView11);
+        ImageView ivAvatar = findViewById(R.id.id_btLogout);
         ivAvatar.setOnClickListener(new logout());
         recyclerView = findViewById(R.id.myRecycler);
 
@@ -58,16 +58,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        options = new FirebaseRecyclerOptions.Builder<model>().setQuery(mDatabase,model.class).build();
-        adapter = new FirebaseRecyclerAdapter<model, ViewHolder>(options) {
+        options = new FirebaseRecyclerOptions.Builder<Donasi>().setQuery(mDatabase,Donasi.class).build();
+        adapter = new FirebaseRecyclerAdapter<Donasi, ViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull model model) {
-                holder.get_txKategori().setText(""+model.getKategori());
-                holder.get_txJudul().setText(""+model.getJudul());
-                holder.get_txLokasi().setText(""+model.getLokasi());
-                holder.get_txNominal().setText("Rp " + NumberFormat.getNumberInstance(Locale.US).format(model.getTerkumpul())
-                        + " / " + NumberFormat.getNumberInstance(Locale.US).format(model.getTarget()));
-                holder.get_txYayasan().setText(""+model.getPelaksana());
+            protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Donasi donasi) {
+                holder.get_txKategori().setText(""+donasi.getKategori());
+                holder.get_txJudul().setText(""+donasi.getJudul());
+                holder.get_txLokasi().setText(""+donasi.getLokasi());
+                holder.get_txNominal().setText("Rp " + NumberFormat.getNumberInstance(Locale.US).format(donasi.getTerkumpul())
+                        + " / " + NumberFormat.getNumberInstance(Locale.US).format(donasi.getTarget()));
+                holder.get_txYayasan().setText(""+donasi.getPelaksana());
 
             }
 

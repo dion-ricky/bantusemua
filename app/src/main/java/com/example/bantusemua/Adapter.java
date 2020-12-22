@@ -8,16 +8,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bantusemua.DbRepo.Donasi;
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
 public class Adapter extends RecyclerView.Adapter <ViewHolder> {
 
-    private ArrayList<model> modelList;
+    private ArrayList<Donasi> modelList;
     private Context _context;
 
-    public Adapter(ArrayList<model> modelList, Context _context) {
+    public Adapter(ArrayList<Donasi> modelList, Context _context) {
         this.modelList = modelList;
         this._context = _context;
     }
