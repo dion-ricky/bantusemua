@@ -8,6 +8,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#D5FFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,63 +20,66 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/id_txJudul"
                 android:layout_width="0dp"
-                android:layout_height="51dp"
-                android:layout_marginEnd="24dp"
+                android:layout_height="52dp"
+                android:layout_marginEnd="8dp"
                 android:text="Desa Mondstadt Jauh Dari Air Bersih"
                 android:textColor="#000000"
-                app:layout_constraintEnd_toStartOf="@+id/imageView4"
-                app:layout_constraintStart_toStartOf="@+id/textView7"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/id_imgDonasi"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/id_txKategori"
+                app:layout_constraintTop_toBottomOf="@+id/id_txKategori" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/id_txKategori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Air Bersih"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="202dp"
-                android:layout_height="195dp"
+                android:id="@+id/id_imgDonasi"
+                android:layout_width="140dp"
+                android:layout_height="162dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/id_txLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="3dp"
                 android:text="Desa Monstadt - Teyvat"
                 android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="@+id/textView9"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintStart_toStartOf="@+id/id_txJudul"
+                app:layout_constraintTop_toBottomOf="@+id/id_txJudul" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/id_txNominal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Rp 0 / 50.000.000"
-                app:layout_constraintStart_toStartOf="@+id/textView10"
-                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                app:layout_constraintStart_toStartOf="@+id/id_txLocation"
+                app:layout_constraintTop_toBottomOf="@+id/id_txLocation" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/id_txYayasan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Yayasan Simanjuntak"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
+                app:layout_constraintStart_toStartOf="@+id/id_txNominal"
+                app:layout_constraintTop_toBottomOf="@+id/id_txNominal"
                 app:layout_constraintVertical_bias="0.57" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

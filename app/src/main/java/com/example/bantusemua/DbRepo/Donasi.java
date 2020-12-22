@@ -7,6 +7,10 @@ public class Donasi {
     private String judul, lokasi, pelaksana, kategori;
     private Double target, terkumpul;
 
+    public Donasi(){
+        
+    }
+
     public Donasi(String judul, String lokasi, String pelaksana, String kategori, Double target, Double terkumpul) {
         this.judul = judul;
         this.lokasi = lokasi;
