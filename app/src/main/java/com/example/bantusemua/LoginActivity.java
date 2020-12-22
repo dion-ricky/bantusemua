@@ -102,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
     class handleLoginGoogle implements View.OnClickListener {
         @Override
         public void onClick(View v) {
+            mGoogleSignInClient.signOut();
             Intent googleSignIn = mGoogleSignInClient.getSignInIntent();
             startActivityForResult(googleSignIn, RC_GOOGLE_SIGN_IN);
         }
