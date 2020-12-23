@@ -36,8 +36,8 @@ public class LoginActivity extends AppCompatActivity {
     Button btnGoToRegister;
     private GoogleSignInClient mGoogleSignInClient;
 
-    private int RC_GOOGLE_SIGN_IN = 90;
-    private int RC_REGISTER = 91;
+    private final int RC_GOOGLE_SIGN_IN = 90;
+    private final int RC_REGISTER = 91;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
     class handleEmailPassLogin implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            Toast.makeText(LoginActivity.this, "Login ...", Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "Login with email", Toast.LENGTH_LONG).show();
             String email, pass;
 
             email = tfEmail.getText().toString();
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 goToHome();
                             } else {
-                                Toast.makeText(LoginActivity.this, "Login gagal!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Login failed", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -113,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RC_GOOGLE_SIGN_IN) {
+            Toast.makeText(LoginActivity.this, "Login with Google Account", Toast.LENGTH_LONG).show();
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
 
             try{
@@ -121,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 Log.w("AUTH_GOOGLE", "Google sign in failed", e);
+                Toast.makeText(LoginActivity.this, "Google sign in failed", Toast.LENGTH_LONG).show();
             }
         }
 
