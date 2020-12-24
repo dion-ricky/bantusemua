@@ -36,7 +36,6 @@ public class Adapter extends RecyclerView.Adapter <ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.get_txKategori().setText(modelList.get(position).getKategori());
         holder.get_txJudul().setText(modelList.get(position).getJudul());
-        holder.get_txLokasi().setText(modelList.get(position).getLokasi());
         holder.get_txNominal().setText(("Rp " + NumberFormat.getNumberInstance(Locale.US).format(modelList.get(position).getTerkumpul())
                 + " / " + NumberFormat.getNumberInstance(Locale.US).format(modelList.get(position).getTarget())));
         holder.get_txYayasan().setText(modelList.get(position).getPelaksana());
