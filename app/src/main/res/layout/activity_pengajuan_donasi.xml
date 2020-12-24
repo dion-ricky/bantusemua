@@ -39,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ivGalangDanaBack" />
 
     <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroup"
+        android:id="@+id/cgKategoriDonasi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -98,7 +98,7 @@
         android:inputType="textCapWords"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/cgKategoriDonasi" />
 
     <EditText
         android:id="@+id/etTargetDana"
@@ -163,6 +163,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDeskripsi"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/ic_btn_galang_dana" />
 
     <Button

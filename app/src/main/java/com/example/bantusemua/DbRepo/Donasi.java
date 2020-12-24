@@ -4,20 +4,21 @@ import com.google.firebase.database.IgnoreExtraProperties;
 
 @IgnoreExtraProperties
 public class Donasi {
-    private String judul, lokasi, pelaksana, kategori;
+    private String judul, pelaksana, kategori, photoUrl, tenggatWaktu;
     private Double target, terkumpul;
 
     public Donasi(){
         
     }
 
-    public Donasi(String judul, String lokasi, String pelaksana, String kategori, Double target, Double terkumpul) {
+    public Donasi(String judul, String tenggatWaktu, String pelaksana, String kategori, Double target, Double terkumpul, String photoUrl) {
         this.judul = judul;
-        this.lokasi = lokasi;
         this.pelaksana = pelaksana;
         this.kategori = kategori;
         this.target = target;
         this.terkumpul = terkumpul;
+        this.photoUrl = photoUrl;
+        this.tenggatWaktu = tenggatWaktu;
     }
 
     public String getJudul() {
@@ -26,14 +27,6 @@ public class Donasi {
 
     public void setJudul(String judul) {
         this.judul = judul;
-    }
-
-    public String getLokasi() {
-        return lokasi;
-    }
-
-    public void setLokasi(String lokasi) {
-        this.lokasi = lokasi;
     }
 
     public String getPelaksana() {
@@ -66,5 +59,21 @@ public class Donasi {
 
     public void setTerkumpul(Double terkumpul) {
         this.terkumpul = terkumpul;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public String getTenggatWaktu() {
+        return tenggatWaktu;
+    }
+
+    public void setTenggatWaktu(String tenggatWaktu) {
+        this.tenggatWaktu = tenggatWaktu;
     }
 }

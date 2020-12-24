@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.bumptech.glide.Glide;
 import com.example.bantusemua.DbRepo.Donasi;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseUser currentUser;
-    FirebaseDatabase mDatabase;
+    DatabaseReference mDatabase;
 
     RecyclerView recyclerView;
 
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         ImageView ivAvatar = findViewById(R.id.id_btLogout);
         ivAvatar.setOnClickListener(new logout());
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.myRecycler);
 
-        DatabaseReference q_Donasi = mDatabase.getReference().child("donasi");
+        DatabaseReference q_Donasi = mDatabase.child("donasi");
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -71,16 +74,6 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.startListening();
         recyclerView.setAdapter(adapter);
-
-
-    }
-
-    void insertToDb(String judul, String lokasi, String pelaksana, String kategori, Double target, Double terkumpul) {
-        Donasi donasi = new Donasi(
-                judul, lokasi, pelaksana, kategori, target, terkumpul
-        );
-
-        mDatabase.getReference().child("donasi").push().setValue(donasi);
     }
 
     class logout implements View.OnClickListener {
@@ -110,10 +103,13 @@ public class MainActivity extends AppCompatActivity {
         protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Donasi donasi) {
             holder.get_txKategori().setText(""+donasi.getKategori());
             holder.get_txJudul().setText(""+donasi.getJudul());
-            holder.get_txLokasi().setText(""+donasi.getLokasi());
+            holder.get_txTenggatWaktu().setText(""+donasi.getTenggatWaktu());
             holder.get_txNominal().setText("Rp " + NumberFormat.getNumberInstance(Locale.US).format(donasi.getTerkumpul())
                     + " / " + NumberFormat.getNumberInstance(Locale.US).format(donasi.getTarget()));
             holder.get_txYayasan().setText(""+donasi.getPelaksana());
+
+            Glide.with(MainActivity.this).load(donasi.getPhotoUrl())
+                    .centerCrop().into(holder.get_imgDonasi());
         }
 
         @NonNull

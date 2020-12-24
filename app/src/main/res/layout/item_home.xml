@@ -53,11 +53,11 @@
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <TextView
-                android:id="@+id/id_txLocation"
+                android:id="@+id/id_txTenggatWaktu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Desa Monstadt - Teyvat"
+                android:text="dd/mm/yyyy"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="@+id/id_txJudul"
                 app:layout_constraintTop_toBottomOf="@+id/id_txJudul" />
@@ -68,8 +68,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Rp 0 / 50.000.000"
-                app:layout_constraintStart_toStartOf="@+id/id_txLocation"
-                app:layout_constraintTop_toBottomOf="@+id/id_txLocation" />
+                app:layout_constraintStart_toStartOf="@+id/id_txTenggatWaktu"
+                app:layout_constraintTop_toBottomOf="@+id/id_txTenggatWaktu" />
 
             <TextView
                 android:id="@+id/id_txYayasan"

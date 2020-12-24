@@ -12,10 +12,10 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
 
     TextView _txKategori;
     TextView _txJudul;
-    TextView _txLokasi;
+    TextView _txTenggatWaktu;
     TextView _txNominal;
     TextView _txYayasan;
-//    ImageView _imgDonasi;
+    ImageView _imgDonasi;
 
     Context _context;
 
@@ -26,10 +26,10 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
         _context = itemView.getContext();
         _txKategori = itemView.findViewById(R.id.id_txKategori);
         _txJudul = itemView.findViewById(R.id.id_txJudul);
-        _txLokasi = itemView.findViewById(R.id.id_txLocation);
+        _txTenggatWaktu = itemView.findViewById(R.id.id_txTenggatWaktu);
         _txNominal = itemView.findViewById(R.id.id_txNominal);
         _txYayasan = itemView.findViewById(R.id.id_txYayasan);
-//        _imgDonasi = itemView.findViewById(R.id.id_imgDonasi);
+        _imgDonasi = itemView.findViewById(R.id.id_imgDonasi);
     }
 
     @Override
@@ -45,8 +45,8 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
         return _txJudul;
     }
 
-    public TextView get_txLokasi() {
-        return _txLokasi;
+    public TextView get_txTenggatWaktu() {
+        return _txTenggatWaktu;
     }
 
     public TextView get_txNominal() {
@@ -57,9 +57,9 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
         return _txYayasan;
     }
 
-//    public ImageView get_imgDonasi() {
-//        return _imgDonasi;
-//    }
+    public ImageView get_imgDonasi() {
+        return _imgDonasi;
+    }
 
     public Context get_context() {
         return _context;
